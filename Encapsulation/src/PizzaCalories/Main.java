@@ -1,4 +1,4 @@
-package pizzaCalories;
+package PizzaCalories;
 //created by J.M.
 
 import java.util.*;
