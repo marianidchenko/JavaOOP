@@ -2,14 +2,25 @@ package vehicles;
 
 import java.text.DecimalFormat;
 
-public class AbstractVehicle implements Vehicle{
+public class AbstractVehicle implements Vehicle {
     private double fuelQuantity;
     private double fuelConsumption;
 
+    private double tankCapacity;
 
-    public AbstractVehicle(double fuelQuantity, double fuelConsumption) {
-        this.fuelQuantity = fuelQuantity;
-        this.fuelConsumption = fuelConsumption;
+
+    public AbstractVehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
+        setFuelQuantity(fuelQuantity);
+        setFuelConsumption(fuelConsumption);
+        setTankCapacity(tankCapacity);
+    }
+
+    public double getTankCapacity() {
+        return tankCapacity;
+    }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
     }
 
     public double getFuelQuantity() {
@@ -17,6 +28,10 @@ public class AbstractVehicle implements Vehicle{
     }
 
     public void setFuelQuantity(double fuelQuantity) {
+        if (fuelQuantity < 0) {
+            System.out.println("Fuel quantity must be a positive number");
+            return;
+        }
         this.fuelQuantity = fuelQuantity;
     }
 
@@ -41,6 +56,9 @@ public class AbstractVehicle implements Vehicle{
 
     @Override
     public void refuel(double liters) {
+        if (this.getFuelQuantity() + liters > this.getTankCapacity()) {
+            System.out.println("Cannot fit fuel in tank");
+        }
         this.setFuelQuantity(this.getFuelQuantity() + liters);
     }
 

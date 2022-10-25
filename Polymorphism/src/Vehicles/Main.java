@@ -9,12 +9,14 @@ public class Main {
         String[] carInfoTokens = scanner.nextLine().split(" ");
         double carFuelQuantity = Double.parseDouble(carInfoTokens[1]);
         double carConsumption = Double.parseDouble(carInfoTokens[2]);
-        Car car = new Car(carFuelQuantity, carConsumption);
+        double carCapacity = Double.parseDouble(carInfoTokens[3]);
+        Car car = new Car(carFuelQuantity, carConsumption, carCapacity);
 
         String[] truckInfoTokens = scanner.nextLine().split(" ");
         double truckFuelQuantity = Double.parseDouble(truckInfoTokens[1]);
         double truckConsumption = Double.parseDouble(truckInfoTokens[2]);
-        Truck truck = new Truck(truckFuelQuantity, truckConsumption);
+        double truckCapacity = Double.parseDouble(truckInfoTokens[3]);
+        Truck truck = new Truck(truckFuelQuantity, truckConsumption, truckCapacity);
 
         int n = Integer.parseInt(scanner.nextLine());
 
