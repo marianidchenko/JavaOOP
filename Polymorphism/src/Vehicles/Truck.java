@@ -9,11 +9,6 @@ public class Truck extends AbstractVehicle {
     }
 
     @Override
-    public String drive(double kilometers) {
-        return super.drive(kilometers);
-    }
-
-    @Override
     public void refuel(double liters) {
         this.setFuelQuantity(this.getFuelQuantity() + liters * 0.95);
     }

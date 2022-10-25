@@ -18,6 +18,12 @@ public class Main {
         double truckCapacity = Double.parseDouble(truckInfoTokens[3]);
         Truck truck = new Truck(truckFuelQuantity, truckConsumption, truckCapacity);
 
+//        String[] busInfoTokens = scanner.nextLine().split(" ");
+//        double busFuelQuantity = Double.parseDouble(busInfoTokens[1]);
+//        double busConsumption = Double.parseDouble(busInfoTokens[2]);
+//        double busCapacity = Double.parseDouble(busInfoTokens[3]);
+//        Bus bus = new Bus(busFuelQuantity, busConsumption, busCapacity);
+
         int n = Integer.parseInt(scanner.nextLine());
 
         for (int i = 0; i < n; i++) {
