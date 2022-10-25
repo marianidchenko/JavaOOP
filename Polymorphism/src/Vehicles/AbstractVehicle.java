@@ -27,13 +27,7 @@ public class AbstractVehicle implements Vehicle {
         return fuelQuantity;
     }
 
-    public void setFuelQuantity(double fuelQuantity) {
-        if (fuelQuantity < 0) {
-            System.out.println("Fuel quantity must be a positive number");
-            return;
-        }
-        this.fuelQuantity = fuelQuantity;
-    }
+    public void setFuelQuantity(double fuelQuantity) { this.fuelQuantity = fuelQuantity; }
 
     public double getFuelConsumption() {
         return fuelConsumption;
@@ -58,6 +52,10 @@ public class AbstractVehicle implements Vehicle {
     public void refuel(double liters) {
         if (this.getFuelQuantity() + liters > this.getTankCapacity()) {
             System.out.println("Cannot fit fuel in tank");
+            return;
+        } else if (liters <= 0) {
+            System.out.println("Fuel must be a positive number");
+            return;
         }
         this.setFuelQuantity(this.getFuelQuantity() + liters);
     }
