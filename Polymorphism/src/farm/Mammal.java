@@ -1,5 +1,7 @@
 package farm;
 
+import java.text.DecimalFormat;
+
 public abstract class Mammal extends Animal{
     String livingRegion;
 
@@ -19,9 +21,10 @@ public abstract class Mammal extends Animal{
 
     @Override
     public String toString() {
-        return String.format("%s [%s, %f, %s, %d]",
+        DecimalFormat format = new DecimalFormat("###.##");
+        return String.format("%s[%s, %s, %s, %d]",
                 this.getAnimalType(), this.getAnimalName(),
-                this.getAnimalWeight(), this.getLivingRegion(),
+                format.format(this.getAnimalWeight()), this.getLivingRegion(),
                 this.getFoodEaten());
     }
 }
