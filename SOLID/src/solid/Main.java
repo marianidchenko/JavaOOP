@@ -14,10 +14,11 @@ public class Main {
         System.out.println(c.getCalories());
         Lemonade l = new Lemonade(100);
         System.out.println(l.getCalories());
-        List<Product> products = new ArrayList<Product>(){{
+        List<Product> products = new ArrayList<>(){{
             add(c);
             add(l);
         }};
-        System.out.println(CalorieCalculator.sum(products));
+        Printer.printSum(products);
+        Printer.printAverage(products);
     }
 }

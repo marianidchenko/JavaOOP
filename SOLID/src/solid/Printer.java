@@ -4,14 +4,14 @@ import solid.products.Product;
 import java.util.List;
 
 public class Printer {
-    private static final String SUM = "Sum: %f";
-    private static final String AVERAGE = "Average: %f";
+    private static final String SUM_FORMAT = "Sum: %f";
+    private static final String AVERAGE_FORMAT = "Average: %f";
 
-    public void printSum(List<Product> products) {
-        System.out.printf((SUM) + "%n", CalorieCalculator.sum(products));
+    public static void printSum(List<Product> products) {
+        System.out.printf((SUM_FORMAT) + "%n", CalorieCalculator.sum(products));
     }
 
-    public void printAverage(List<Product> products) {
-        System.out.printf((AVERAGE) + "%n", CalorieCalculator.average(products));
+    public static void printAverage(List<Product> products) {
+        System.out.printf((AVERAGE_FORMAT) + "%n", CalorieCalculator.average(products));
     }
 }
