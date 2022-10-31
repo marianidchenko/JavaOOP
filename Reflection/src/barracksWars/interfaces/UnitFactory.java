@@ -1,8 +1,7 @@
 package barracksWars.interfaces;
-
-import jdk.jshell.spi.ExecutionControl;
+//created by J.M.
 
 public interface UnitFactory {
 
-    Unit createUnit(String unitType) throws ExecutionControl.NotImplementedException;
+    Unit createUnit(String unitType) ;
 }

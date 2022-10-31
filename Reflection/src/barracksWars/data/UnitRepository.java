@@ -1,15 +1,15 @@
 package barracksWars.data;
+//created by J.M.
 
 import barracksWars.interfaces.Repository;
 import barracksWars.interfaces.Unit;
-import jdk.jshell.spi.ExecutionControl;
 
 import java.util.Map;
 import java.util.TreeMap;
 
 public class UnitRepository implements Repository {
 
-	private Map<String, Integer> amountOfUnits;
+	private final Map<String, Integer> amountOfUnits;
 
 	public UnitRepository() {
 		this.amountOfUnits = new TreeMap<>();
@@ -38,8 +38,12 @@ public class UnitRepository implements Repository {
 		return statBuilder.toString();
 	}
 
-	public void removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
-		// TODO: implement for problem 4
-		throw new ExecutionControl.NotImplementedException("message");
+	public void removeUnit(String unitType)  {
+		if (!amountOfUnits.containsKey (unitType)|| amountOfUnits.get (unitType)==0) {
+			throw new IllegalStateException ("No such units in repository.");
+		}
+
+		amountOfUnits.put (unitType, amountOfUnits.get (unitType)-1);
+
 	}
 }

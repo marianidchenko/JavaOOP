@@ -1,6 +1,5 @@
 package barracksWars.interfaces;
-
-import jdk.jshell.spi.ExecutionControl;
+//created by J.M.
 
 public interface Repository {
 
@@ -8,5 +7,5 @@ public interface Repository {
 
 	String getStatistics();
 
-	void removeUnit(String unitType) throws ExecutionControl.NotImplementedException;
+	void removeUnit(String unitType);
 }
