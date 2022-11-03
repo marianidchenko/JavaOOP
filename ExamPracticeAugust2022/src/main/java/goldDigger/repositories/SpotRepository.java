@@ -22,7 +22,6 @@ public class SpotRepository implements Repository<Spot> {
     @Override
     public void add(Spot spot) {
         spots.put(spot.getName(), spot);
-
     }
 
     @Override

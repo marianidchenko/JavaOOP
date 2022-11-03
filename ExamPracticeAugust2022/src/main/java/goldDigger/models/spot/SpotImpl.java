@@ -4,6 +4,7 @@ import goldDigger.common.ExceptionMessages;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class SpotImpl implements Spot{
@@ -24,11 +25,11 @@ public class SpotImpl implements Spot{
 
     @Override
     public Collection<String> getExhibits() {
-        return null;
+        return Collections.unmodifiableCollection(exhibits);
     }
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 }
