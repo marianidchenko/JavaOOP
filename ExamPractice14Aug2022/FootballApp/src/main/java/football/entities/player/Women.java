@@ -8,9 +8,6 @@ public class Women extends BasePlayer{
         super(name, nationality, DEFAULT_KILOGRAMS, strength);
     }
 
-    // TODO Can only play on artificial turf
-
-
     @Override
     public void stimulation() {
         setStrength(this.getStrength() + STRENGTH_INCREASE);

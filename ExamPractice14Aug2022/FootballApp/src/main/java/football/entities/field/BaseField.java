@@ -71,9 +71,7 @@ public abstract class BaseField implements Field {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s (%s):\n", this.name, this.getClass().getSimpleName()));
         if (this.players.size() > 0) {
-            for (Player p : this.players) {
-                sb.append(String.format("Player: %s\n", String.join(" ", this.players.stream().map(Player::getName).collect(Collectors.toList()))));
-            }
+            sb.append(String.format("Player: %s\n", String.join(" ", this.players.stream().map(Player::getName).collect(Collectors.toList()))));
         } else {
             sb.append("Player: none\n");
         }

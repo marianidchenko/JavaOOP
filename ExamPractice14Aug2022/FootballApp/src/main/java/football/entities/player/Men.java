@@ -8,8 +8,6 @@ public class Men extends BasePlayer{
         super(name, nationality, DEFAULT_KILOGRAMS, strength);
     }
 
-    // TODO Can only play on natural grass
-
 
     @Override
     public void stimulation() {

@@ -11,11 +11,11 @@ public abstract class BaseSupplement implements Supplement {
 
     @Override
     public int getEnergy() {
-        return 0;
+        return this.energy;
     }
 
     @Override
     public double getPrice() {
-        return 0;
+        return this.price;
     }
 }
