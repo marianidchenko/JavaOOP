@@ -14,7 +14,7 @@ public class PresentRepository implements Repository<Present> {
     }
 
     @Override
-    public Collection getModels() {
+    public Collection<Present> getModels() {
         return Collections.unmodifiableCollection(presents);
     }
 
