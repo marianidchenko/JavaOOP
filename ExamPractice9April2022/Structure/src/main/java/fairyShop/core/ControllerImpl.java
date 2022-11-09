@@ -10,13 +10,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ControllerImpl implements Controller{
-    private HelperRepository helperRepository;
-    private PresentRepository presentRepository;
-
-    public ControllerImpl() {
-        this.helperRepository = new HelperRepository();
-        this.presentRepository = new PresentRepository();
-    }
+    private HelperRepository helperRepository = new HelperRepository();
+    private PresentRepository presentRepository = new PresentRepository();
+    private ShopImpl shop = new ShopImpl();
 
     @Override
     public String addHelper(String type, String helperName) {
@@ -51,16 +47,15 @@ public class ControllerImpl implements Controller{
 
     @Override
     public String craftPresent(String presentName) {
-        ShopImpl shop = new ShopImpl();
+
         List<Helper> suitableHelpers = this.helperRepository.getModels().stream().filter(h -> h.getEnergy() > 50)
                 .collect(Collectors.toList());
-        if (suitableHelpers.size() == 0) {
+        if (suitableHelpers.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessages.NO_HELPER_READY);
         }
 
         int brokenInstruments = 0;
         Present present = presentRepository.findByName(presentName);
-
         for (Helper helper : suitableHelpers) {
             shop.craft(present, helper);
             brokenInstruments += (int) helper.getInstruments().stream().filter(Instrument::isBroken).count();
@@ -83,6 +78,6 @@ public class ControllerImpl implements Controller{
                         "Energy: %d%n" +
                         "Instruments: %d not broken left%n", helper.getName(), helper.getEnergy(),
                 (int) helper.getInstruments().stream().filter(instrument -> !instrument.isBroken()).count())).collect(Collectors.toList());
-        return String.format("%d presents are done!", size) + String.format("Helpers info:%n") + String.join("", collect).trim();
+        return String.format("%d presents are done!%n", size) + String.format("Helpers info:%n") + String.join("", collect).trim();
     }
 }
