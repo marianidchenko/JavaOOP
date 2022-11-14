@@ -8,7 +8,7 @@ import java.util.Collection;
 public class FoodRepositoryImpl implements FoodRepository{
     private Collection<Food> foods;
 
-    public FoodRepositoryImpl(Collection<Food> foods) {
+    public FoodRepositoryImpl() {
         this.foods = new ArrayList<>();
     }
 

@@ -57,6 +57,7 @@ public abstract class BaseArea implements Area {
         if (this.animals.size() >= capacity) {
             throw new IllegalStateException(ExceptionMessages.NOT_ENOUGH_CAPACITY);
         }
+        this.animals.add(animal);
     }
 
     @Override
@@ -79,7 +80,7 @@ public abstract class BaseArea implements Area {
     @Override
     public String getInfo() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s (%s)", this.getName(), this.getClass().getSimpleName()));
+        sb.append(String.format("%s (%s):", this.getName(), this.getClass().getSimpleName()));
         sb.append(System.lineSeparator());
         if (this.animals.size() > 0) {
             sb.append(String.format("Animals: %s", String.join(" ", this.animals.stream()
